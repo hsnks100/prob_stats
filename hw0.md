@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: hw0 
 permalink: /hw0/
 ---
