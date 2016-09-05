@@ -1,3 +1,11 @@
+---
+layout: page
+title: testpage
+permalink: /testpage/
+---
+
+
+
 markdown test..
 test 입입ㄴ입ㄴ다입ㄴ다.
 
