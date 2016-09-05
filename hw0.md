@@ -5,6 +5,8 @@ permalink: /hw0/
 ---
 * table of contents
 {:toc}
+
+
 ### [확률과 통계] 보고서#0
 
 ##부제 한경수 프로필 작성을 통해 익히는 문서 작성법
