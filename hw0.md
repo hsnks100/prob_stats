@@ -3,6 +3,7 @@ layout: page
 title: hw0
 permalink: /hw0/
 ---
+* table of contents
 {:toc}
 ### [확률과 통계] 보고서#0
 
