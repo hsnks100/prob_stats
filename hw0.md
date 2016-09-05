@@ -1,6 +1,6 @@
 ---
-layout: page
-title: hw0
+layout: default
+title: hw0 
 permalink: /hw0/
 ---
 * table of contents
