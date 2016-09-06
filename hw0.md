@@ -5,6 +5,8 @@ permalink: /hw0/
 ---
 * table of contents
 {:toc}
+
+
 |-----------------+------------+-----------------+----------------|
 | Default aligned |Left aligned| Center aligned  | Right aligned  |
 |-----------------|:-----------|:---------------:|---------------:|
