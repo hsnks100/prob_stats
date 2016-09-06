@@ -23,6 +23,10 @@ $$
 \end{align*}
 $$
 
+```math #yourmathlabel
+a + b = c
+```
+
 
 
 |---
