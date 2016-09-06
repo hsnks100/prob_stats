@@ -27,6 +27,11 @@ $$
 a + b = c
 ```
 
+$$\begin{foo}
+
+a + b = c
+
+\end{foo}$$
 
 
 |---
