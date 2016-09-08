@@ -11,5 +11,19 @@ url: "http://example.com" # the base hostname & protocol for your site
 github_username:  hsnks100
 
 # Build settings
+#markdown: kramdown
+#theme: minima
+
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
 markdown: kramdown
-theme: minima
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
