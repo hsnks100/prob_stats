@@ -15,11 +15,15 @@ github_username:  hsnks100
 #theme: minima
 
 
-# Sass
-sass:
-  style: :compressed
-  sass_dir: _sass
 
+
+source: ./
+destination: ./_site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
 
 # Markdown
 markdown: kramdown
@@ -27,3 +31,4 @@ kramdown:
   input: GFM
   hard_wrap: false
 highlighter: rouge
+
