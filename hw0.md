@@ -1,18 +1,11 @@
 ---
 layout: page
-title: hw0 
+title:  
 permalink: /hw0/
 ---
-* table of contents
-{:toc}
 
 
 
-$$\begin{foo}
-
-a + b = c
-
-\end{foo}$$
 
 |대학(원)|공과대학|학위|학사|학과(부)|정보컴퓨터공학부|
 |---|---          |---|---|---|---|
