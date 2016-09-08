@@ -18,7 +18,7 @@ github_username:  hsnks100
 # Sass
 sass:
   style: :compressed
-  sass_dir: css
+  sass_dir: _sass
 
 
 # Markdown
