@@ -26,6 +26,22 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+//colors
+$red: #ff0000;
+$black: #000000;
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 2px solid $red;
+}
+th {
+	border: 2px solid $black;
+}
+td {
+	border: 1px solid $black;
+}
+
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
