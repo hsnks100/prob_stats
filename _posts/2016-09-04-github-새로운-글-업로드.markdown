@@ -13,6 +13,7 @@ comments: true
 2D simple graphics editor
 
 # 개요
+
 간단한 html5 canvas 를 이용하여 graphic editor 를 만들어보는 과제다..
 전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestFrame 
 
@@ -27,6 +28,7 @@ comments: true
 ```
 
 # 구현
+
 ```
     canvas = document.getElementById('myCanvas');
     context = canvas.getContext('2d');
