@@ -16,6 +16,9 @@ comments: true
 ## 개요
 
 간단한 html5 canvas 를 이용하여 graphic editor 를 만들어보는 과제다..
+
+![images/1.jpg]
+
 전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestAnimationFrame 을 통해 canvas 에 그리는 방식으로 동작한다.
 
 ``` javascript
@@ -125,8 +128,8 @@ canvasHeight = canvas.height;
 
 ``` javascript
 canvas.onmousedown = function(e){
-  console.log(e);
-  downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
+console.log(e);
+downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
 };
 ```
 
@@ -134,35 +137,35 @@ mousedown 부는 별거 없다. 그냥 처음에 찍은 좌표를 알아야 직�
 
 
 ``` javascript
-canvas.onmouseup = function(e){
-  context.strokeStyle = strokeColor;
-  context.lineWidth = lineWidth;
-  if(fillMode === FILLMODE.pattern){
-    var pattern = context.createPattern(patternObj, 'repeat');
-    context.fillStyle = pattern;
-  }
-  else{
-    context.fillStyle = fillColor;
-  }
+    canvas.onmouseup = function(e){
+        context.strokeStyle = strokeColor;
+        context.lineWidth = lineWidth;
+        if(fillMode === FILLMODE.pattern){
+            var pattern = context.createPattern(patternObj, 'repeat');
+            context.fillStyle = pattern;
+        }
+        else{
+            context.fillStyle = fillColor;
+        }
 
-  var patternSrc = "";
-  if(fillMode){
-    patternSrc = patternObj.src;
-  }
+        var patternSrc = "";
+        if(fillMode){
+            patternSrc = patternObj.src;
+        }
 
-  if(drawMode == drawModes.line){
-    drawObjects.push({"type":"line", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
-      "x":downPos.x, "y":downPos.y, "dx":e.offsetX, "dy":e.offsetY});
-  }
-  else if(drawMode == drawModes.circle){
+        if(drawMode == drawModes.line){
+            drawObjects.push({"type":"line", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
+                "x":downPos.x, "y":downPos.y, "dx":e.offsetX, "dy":e.offsetY});
+        }
+        else if(drawMode == drawModes.circle){
 
-    drawObjects.push({"type":"circle", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
-      "fillMode":fillMode, "patternSrc":patternSrc,
-      "x":downPos.x, "y":downPos.y, "r":Math.dist(e.offsetX - downPos.x, e.offsetY - downPos.y)});
-    //context.fill(downPos.x, downPos.y, e.offsetX - downPos.x, e.offsetY - downPos.y); 
-  }
-  ...
-}
+            drawObjects.push({"type":"circle", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
+                "fillMode":fillMode, "patternSrc":patternSrc,
+                "x":downPos.x, "y":downPos.y, "r":Math.dist(e.offsetX - downPos.x, e.offsetY - downPos.y)});
+            //context.fill(downPos.x, downPos.y, e.offsetX - downPos.x, e.offsetY - downPos.y); 
+        }
+        ...
+    }
 
 ```
 
