@@ -16,9 +16,9 @@ comments: true
 ## 개요
 
 간단한 html5 canvas 를 이용하여 graphic editor 를 만들어보는 과제다..
-전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestFrame 
+전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestAnimationFrame 을 통해 canvas 에 그리는 방식으로 동작한다.
 
-``` cpp
+``` javascript
     function gameLoop(){
 
         //Clear screen
@@ -38,7 +38,7 @@ comments: true
 
 ### layout 잡기
 
-``` 
+``` html
 <div class="container">
     <div class="toolbox">
         <button onclick="drawMode = drawModes.line;" class="tool">선분</button>
@@ -92,7 +92,8 @@ comments: true
 ```
 
 위와 같이 div 를 잡으면 
-|----|------------------|
+
+>|----|------------------|
 |----|------------------|
 |----|------------------|
 |----|------------------|
