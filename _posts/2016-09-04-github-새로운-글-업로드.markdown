@@ -7,7 +7,7 @@ tags: hash
 comments: true
 ---
 * table of contents
-{:toc 
+{:toc}
 
 
 2D simple graphics editor
