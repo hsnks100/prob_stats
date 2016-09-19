@@ -24,12 +24,88 @@ comments: true
         //Clear screen
         context.clearRect(0, 0, canvasWidth, canvasHeight);
 
+        // #1
+        requestAnimationFrame(gameLoop);
+
     }
+    gameLoop();
 
 ```
 
+위와 같이 gameLoop(); 가 loop 를 돌면서 canvas 를 그린다.  #1 부분에서 저장된 객체가 loop 를 돌면서 draw 를 하는 구조로 갈 것이다.
+
 ## 구현
 
+### layout 잡기
+
+``` 
+<div class="container">
+    <div class="toolbox">
+        <button onclick="drawMode = drawModes.line;" class="tool">선분</button>
+        <button onclick="drawMode = drawModes.circle;" class="tool">원</button>
+        <button onclick="drawMode = drawModes.rect;" class="tool">사각형</button>
+        <button onclick="selectPolygon();" class="tool">다각형</button>
+        <button onclick="drawMode = drawModes.bezier;" class="tool">곡선</button>
+
+        <hr />
+        <button click="" class="tool">색채우기</button>
+        <div id="currentFill" class="current-fill"></div>
+
+        <div class="fill-palette fill-black" style="float:left;"></div>
+        <div class="fill-palette fill-red" style="float:left;"></div>
+        <div class="fill-palette fill-green" style="float:left;"></div>
+        <div class="fill-palette fill-blue"></div>
+        <div class="fill-palette fill-wine" style="float:left;"></div>
+        <div class="fill-palette fill-violet" style="float:left;"></div>
+        <div style="clear:left;"></div>
+
+        <input type="file" onchange="readURL(event);"/>
+        <hr />
+        <div id="currentStroke" class="current-stroke"></div>
+
+        <div class="stroke-palette stroke-black" style="float:left;"></div>
+        <div class="stroke-palette stroke-red" style="float:left;"></div>
+        <div class="stroke-palette stroke-green" style="float:left;"></div>
+        <div class="stroke-palette stroke-blue"></div>
+        <div class="stroke-palette stroke-wine" style="float:left;"></div>
+        <div class="stroke-palette stroke-violet" style="float:left;"></div>
+        <div style="clear:left;"></div>
+
+        <button click="" class="tool">선색</button>
+
+        <img src="line_width1.jpg" onclick='lineWidth = 1;'/>
+        <img src="line_width3.jpg" onclick='lineWidth = 3;'/>
+        <img src="line_width5.jpg" onclick='lineWidth = 5;'/>
+        <img src="line_width7.jpg" onclick='lineWidth = 7;'/>
+    </div>
+    <div>
+        <canvas id="myCanvas" class="canvas" width="600" height="200"></canvas>
+    </div>
+
+    <div class="menu"> 
+        <button id="load" onclick='loadf();'>불러오기</button>
+        <button id="save" onclick='savef();'>저장하기</button>
+
+        <input id="loadbtn" type="file" name="loadbtn" style="display: none;" />
+    </div> 
+</div>
+```
+
+위와 같이 div 를 잡으면 
+|----|------------------|
+|----|------------------|
+|----|------------------|
+|----|------------------|
+|tool|       canvas     |
+|----|------------------|
+|----|------------------|
+|----|------------------|
+|----|------------------|
+|----|  load,   save    |
+
+구조로 잡힌다.
+
+### canvas 선언부
 ```
     canvas = document.getElementById('myCanvas');
     context = canvas.getContext('2d');
@@ -37,14 +113,57 @@ comments: true
     canvasWidth = canvas.width;
     canvasHeight = canvas.height;
 
-    var downPos = {x:0, y:0};
-    var fillColor;
-    var strokeColor;
+```
+
+교재에 나온대로 평범하게 canvas 를 잡는다. 
+
+### canvas mousedown / mouseup
+
+```
     canvas.onmousedown = function(e){
         console.log(e);
         downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
     };
 ```
+
+mousedown 부는 별거 없다. 그냥 처음에 찍은 좌표를 알아야 직선이든 원이든 사각형이든 정보를 넣을 수 있으므로 클릭 좌표를 저장해놓는다..
+
+
+```
+    canvas.onmouseup = function(e){
+        context.strokeStyle = strokeColor;
+        context.lineWidth = lineWidth;
+        if(fillMode === FILLMODE.pattern){
+            var pattern = context.createPattern(patternObj, 'repeat');
+            context.fillStyle = pattern;
+        }
+        else{
+            context.fillStyle = fillColor;
+        }
+
+        var patternSrc = "";
+        if(fillMode){
+            patternSrc = patternObj.src;
+        }
+
+        if(drawMode == drawModes.line){
+            drawObjects.push({"type":"line", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
+                "x":downPos.x, "y":downPos.y, "dx":e.offsetX, "dy":e.offsetY});
+        }
+        else if(drawMode == drawModes.circle){
+
+            drawObjects.push({"type":"circle", "strokeColor":strokeColor, "fillColor":fillColor, "lineWidth":lineWidth,
+                "fillMode":fillMode, "patternSrc":patternSrc,
+                "x":downPos.x, "y":downPos.y, "r":Math.dist(e.offsetX - downPos.x, e.offsetY - downPos.y)});
+            //context.fill(downPos.x, downPos.y, e.offsetX - downPos.x, e.offsetY - downPos.y); 
+        }
+        ...
+    }
+
+```
+
+mouseup 부는 마우스를 뗏을 때 drawObjects 로 객체를 차곡차곡 push 하는 역할을 한다. 들어가는 정보는 type, strokeColor, fillColor, lineWidth, pattern, etc..
+
 
 
 ## 결과
