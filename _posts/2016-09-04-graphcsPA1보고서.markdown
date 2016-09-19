@@ -109,7 +109,8 @@ comments: true
 구조로 잡힌다.
 
 ### canvas 선언부
-```
+
+``` javascript
     canvas = document.getElementById('myCanvas');
     context = canvas.getContext('2d');
 
@@ -122,7 +123,7 @@ comments: true
 
 ### canvas mousedown / mouseup
 
-```
+``` javascript
     canvas.onmousedown = function(e){
         console.log(e);
         downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
@@ -132,7 +133,7 @@ comments: true
 mousedown 부는 별거 없다. 그냥 처음에 찍은 좌표를 알아야 직선이든 원이든 사각형이든 정보를 넣을 수 있으므로 클릭 좌표를 저장해놓는다..
 
 
-```
+``` javascript
     canvas.onmouseup = function(e){
         context.strokeStyle = strokeColor;
         context.lineWidth = lineWidth;
