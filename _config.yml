@@ -10,9 +10,6 @@ url: "http://example.com" # the base hostname & protocol for your site
 
 github_username:  hsnks100
 
-# Build settings
-#markdown: kramdown
-#theme: minima
 
 
 
@@ -24,6 +21,11 @@ destination: ./_site
 sass:
   sass_dir: assets/scss
   style: compressed # expanded
+
+# Conversion
+markdown:    kramdown
+lsi:         false
+excerpt_separator: "\n\n"
 
 # Markdown Processors
 kramdown:

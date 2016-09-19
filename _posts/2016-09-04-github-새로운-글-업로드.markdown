@@ -27,9 +27,24 @@ comments: true
 ```
 
 # 구현
+```
+    canvas = document.getElementById('myCanvas');
+    context = canvas.getContext('2d');
+
+    canvasWidth = canvas.width;
+    canvasHeight = canvas.height;
+
+    var downPos = {x:0, y:0};
+    var fillColor;
+    var strokeColor;
+    canvas.onmousedown = function(e){
+        console.log(e);
+        downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
+    };
+```
+
 
 # 결과
 
 
 
-간단히 hash 함수가 필요할 때 쓸 수 있다.
