@@ -1,0 +1,52 @@
+---
+layout: post
+title: "graphics 2번째 과제"
+author: 200721395한경수(hsnks100@gmail.com)
+date: 2016-09-17 08:51 +0900
+tags: hash
+comments: true
+---
+
+
+* table of contents
+{:toc}
+
+
+# 개요
+
+간단한 html5 canvas 를 이용하여 graphic editor 를 만들어보는 과제다..
+전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestFrame 
+
+``` cpp
+    function gameLoop(){
+
+        //Clear screen
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    }
+
+```
+
+# 구현
+
+```
+    canvas = document.getElementById('myCanvas');
+    context = canvas.getContext('2d');
+
+    canvasWidth = canvas.width;
+    canvasHeight = canvas.height;
+
+    var downPos = {x:0, y:0};
+    var fillColor;
+    var strokeColor;
+    canvas.onmousedown = function(e){
+        console.log(e);
+        downPos = {x:e.offsetX, y:e.offsetY}; // e.client 
+    };
+```
+
+
+# 결과
+
+
+
