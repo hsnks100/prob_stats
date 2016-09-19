@@ -22,14 +22,11 @@ comments: true
 전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestAnimationFrame 을 통해 canvas 에 그리는 방식으로 동작한다.
 
 ``` javascript
-    function gameLoop(){
-
+    function gameLoop(){ 
         //Clear screen
-        context.clearRect(0, 0, canvasWidth, canvasHeight);
-
+        context.clearRect(0, 0, canvasWidth, canvasHeight); 
         // #1
-        requestAnimationFrame(gameLoop);
-
+        requestAnimationFrame(gameLoop); 
     }
     gameLoop();
 
@@ -172,6 +169,9 @@ mousedown 부는 별거 없다. 그냥 처음에 찍은 좌표를 알아야 직�
 mouseup 부는 마우스를 뗏을 때 drawObjects 로 객체를 차곡차곡 push 하는 역할을 한다. 들어가는 정보는 type, strokeColor, fillColor, lineWidth, pattern, etc..
 
 
+### 여러가지 도형을 그려본 모습
+
+![](../images/graphic_pa01/2.jpg)
 
 ## 결과
 
