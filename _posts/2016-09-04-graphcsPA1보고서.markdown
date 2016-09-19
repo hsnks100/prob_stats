@@ -57,8 +57,7 @@ comments: true
     <div class="fill-palette fill-blue"></div>
     <div class="fill-palette fill-wine" style="float:left;"></div>
     <div class="fill-palette fill-violet" style="float:left;"></div>
-    <div style="clear:left;"></div>
-
+    <div style="clear:left;"></div> 
     <input type="file" onchange="readURL(event);"/>
     <hr />
     <div id="currentStroke" class="current-stroke"></div>
