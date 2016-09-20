@@ -22,17 +22,15 @@ comments: true
 전체적인 구조는 그래픽 요소를 json object 로 가지고 있으면서 requestAnimationFrame 을 통해 canvas 에 그리는 방식으로 동작한다.
 
 ``` javascript
-    function gameLoop(){ 
-        //Clear screen
-        context.clearRect(0, 0, canvasWidth, canvasHeight); 
-        // #1
-        requestAnimationFrame(gameLoop); 
-    }
-    gameLoop();
+function redraw(){ 
+    //Clear screen
+    context.clearRect(0, 0, canvasWidth, canvasHeight); 
+    // #1 draw part
+}
 
 ```
 
-위와 같이 gameLoop(); 가 loop 를 돌면서 canvas 를 그린다.  #1 부분에서 저장된 객체가 loop 를 돌면서 draw 를 하는 구조로 갈 것이다.
+위와 같이 그리기가 필요할 때 redraw(); 가 canvas 를 그린다.  #1 부분에서 저장된 객체가 loop 를 돌면서 draw 를 하는 구조로 갈 것이다.
 
 ## 기본구현
 
@@ -161,6 +159,7 @@ mousedown 부는 별거 없다. 그냥 처음에 찍은 좌표를 알아야 직�
             //context.fill(downPos.x, downPos.y, e.offsetX - downPos.x, e.offsetY - downPos.y); 
         }
         ...
+        redraw();
     }
 
 ```
