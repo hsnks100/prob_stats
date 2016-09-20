@@ -255,6 +255,8 @@ g 에 drawObjects 문자열을 저장한 후 saveTextAs 로 저장을 하면 파
     "w": 128,
     "h": -56
   },
+  [{"type":"rect","strokeColor":"rgb(255, 0, 0)","fillColor":"rgb(0, 0, 0)","lineWidth":3,"fillMode":1,"patternSrc":"data:image/png;base64,iVBORw0KGg...",
+  "x":171,"y":93,"w":73,"h":35}]
   ...
 ]
 
@@ -264,8 +266,26 @@ g 에 drawObjects 문자열을 저장한 후 saveTextAs 로 저장을 하면 파
 
 
 ### 불러오기를 통해 불러오는 방법
+``` html
+
+<button id="load" onclick="$('#loadbtn').trigger('click');">불러오기</button>
+<input id="loadbtn" type="file" name="loadbtn" style="display: none;"
+onchange="loadf(event);" />
+function loadf(event){
+    selectedFile = event.target.files[0];
+    var reader = new FileReader(); 
+    reader.onload = function(event) {
+        drawObjects = JSON.parse(event.target.result);
+    };
+    reader.readAsText(selectedFile); 
+}
+```
 
 불러오기를 통해 로컬데이터를 가져오는 방법은 상대적으로 간단한데, 
+그림파일 로드하는것과 마찬가지로 하는데 reader.readAsDataURL 대신에 
+reader.readAsText 를 통해, Text 를 얻어와서 drawObjects 에 JSON.parse 한 결과를 넣어주면 바로 로드가 된다.
+
+
 
 ## 결과
 
