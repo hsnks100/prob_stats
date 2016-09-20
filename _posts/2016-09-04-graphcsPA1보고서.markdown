@@ -1,17 +1,12 @@
 ---
-layout: post
-title: "graphics 2번째 과제"
-author: 200721395한경수(hsnks100@gmail.com)
-date: 2016-09-17 08:51 +0900
-tags: hash
-comments: true
----
 
+제목: Simple Graphic Editor 
 
-* table of contents
-{:toc}
+글쓴이: 200721395 한경수(hsnks100@gmail.com)
 
-# simple graphic editor
+날짜: 2016-09-20
+
+--- 
 
 ## 개요
 
