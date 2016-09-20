@@ -179,6 +179,7 @@ mouseup 부는 마우스를 뗏을 때 drawObjects 로 객체를 차곡차곡 pu
   lineWidth, fillMode, patternSrc, 기타 도형만의 특성
 
 으로 표현하면 과제상으로 나온 스펙을 표현하기에 부족함이 없다. 예를 들어 circle 인 경우를 표현하면 다음과 같다.
+
 ``` json
 {
   "type": "circle",
