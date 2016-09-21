@@ -46,6 +46,7 @@ Eclipse for DS-5 를 이용하여 C++ Proejct 를 생성한다.
 
 
 아무것도 하지 않은채 다음 코드를 build 하게 되면 axf 파일이 Debug 하위 폴더에 생성이 된다.
+
 ``` cpp
 int main(){
   return 0;
