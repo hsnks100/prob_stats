@@ -2,6 +2,7 @@
 layout: post
 title: "회화패턴"
 date: 2016-09-21 11:12 +0900
+Author: ㅇㅇㅇ
 tags: 
 ---
 * table of contents
