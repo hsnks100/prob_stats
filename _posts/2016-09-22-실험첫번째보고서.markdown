@@ -58,8 +58,11 @@ Debug Configuration 에 들어가서 axf 파일을 지정한 뒤, Debug 를 누�
 
 ## 구현
 ### Bit 다루기
+
 BIT 는 여기서 32bit 변수라고 가정한다.
+
 #### Bit Set
+
 bit set 은 | (OR) 연산을 통해 구현하게 된다. 
 
 ``` cpp
