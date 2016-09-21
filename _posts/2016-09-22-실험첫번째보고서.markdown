@@ -70,16 +70,20 @@ BIT |= (1 << (n - 1)) // n 번째 비트를 set
 
 #### Bit Unset
 bit unset 은 & 와 ~ 를 통해서 구현하게 되는데 코드는 다음과 같다.
+
 ``` cpp
 
 ```
+
 #### Bit Check
+
 bit check 방법은 다음과 같다.
 ``` cpp
 
 ```
 
 ### Port Enable
+
 ```
 (*(volatile unsigned *)0x40021018) |= 0x3c; // A, B, C, D Port Enable
 ```
@@ -88,8 +92,7 @@ bit check 방법은 다음과 같다.
 
 ### LED 에 불켜기
 
-``` cpp
-
+``` cpp 
 const int ALE1= 0x04;
 const int ALE2= 0x08;
 const int ALE3= 0x10;
