@@ -4,8 +4,6 @@ title: "회화패턴"
 date: 2016-09-21 11:12 +0900
 author: ㅇㅇㅇ
 ---
-* table of contents
-{:toc}
 
 # 1. 과거에 하려고 했던 걸 말하고자 할 때  was going to
 
