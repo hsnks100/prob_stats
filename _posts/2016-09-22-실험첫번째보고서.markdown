@@ -96,6 +96,11 @@ bit check 방법은 다음과 같다.
 
 설명
 
+
+![](../images/experiment01/ref1.png) 
+![](../images/experiment01/ref2.png) 
+![](../images/experiment01/ref3.png) 
+
 ### LED 에 불켜기
 
 ``` cpp 
@@ -120,6 +125,7 @@ int main(){
 }
 
 ```
+
 
 ### 조이스틱 탐지
 
@@ -148,6 +154,8 @@ void onAll()
 }
 
 ```
+
+![](../images/experiment01/real1.jpg)
 
 
 ### S1, S2 버튼 탐지
